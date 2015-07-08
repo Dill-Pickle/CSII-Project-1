@@ -1,3 +1,7 @@
+/*Jordan Stormo		
+  Hasani Mason		
+  Devin Gonzolas		
+*/
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
