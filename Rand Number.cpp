@@ -1,38 +1,44 @@
-/*Jordan Stormo
-  Hasani Mason
-  Devin Gonzolas
+/*Jordan Stormo		
+  Hasani Mason		
+  Devin Gonzolas		
 */
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
 #include <string>
+#include <algorithm>
+#include <iterator>
 using namespace std;
 
 void numbers();
 void cards();
 
-void main()
+int main()
 {
 	srand(time(NULL));
 	numbers();
 	cards();
-
+    return 0;
 }
 void numbers()
 {
 	char answer;
 	int numb[9];
-
+        int* p;
+  	int random;
+    
 	do
 	{
 		for (int i = 1; i < 9; i++)
 		{
-			numb[i] = rand() % 52;
-
-			if (numb[i] == numb[i - 1])
-			{
-				numb[i] = rand() % 52;
-			}
+		    random = rand() % 52;
+            int* p = find(numb, numb+9, random);
+            while(p != numb+9){
+                random = rand() % 52;
+                p = find(numb, numb+9, random);
+            }
+            numb[i] = random;
+                
 		}
 		for (int i = 0; i < 9; i++)
 		{
